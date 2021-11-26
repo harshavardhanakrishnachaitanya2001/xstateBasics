@@ -7,6 +7,7 @@ const machineExample = Machine({
   states:{
     off:{
       on:{
+        ON:"activateProcess",
         ACTIVATE:"activateProcess"
       }
     },
@@ -28,7 +29,8 @@ export default function App(){
   return (
     <>
   <p>the currently the machine is in the {machine.value} state</p>
-  <button onClick ={() => send('ACTIVATE')} >ACTIVATE PROCESS</button>
+  <button onClick = {() => send('ON')}>ON THE MACHINE</button>
+  <button onClick = {() => send('ACTIVATE')}>ACTIVATE PROCESS</button>
   <button onClick = {() => send("DEACTIVATE")}>DEACTIVATE PROCESS</button>
   <button onClick = {() => send("TURNOFF")}>TURN OFF PROCESS</button>
   </>
